@@ -1,0 +1,22 @@
+enum NAVIGATION_DIRECTION {
+    UP = 'UP',
+    DOWN = 'DOWN',
+    LEFT = 'LEFT',
+    RIGHT = 'RIGHT',
+}
+
+enum CARD_TYPE {
+    DEFAULT_CARD = 'DEFAULT_CARD',
+}
+
+
+enum CAROUSEL_TYPE {
+    DEFAULT_CARD = 'DEFAULT_CARD',
+}
+
+
+export {
+    CARD_TYPE,
+    CAROUSEL_TYPE,
+    NAVIGATION_DIRECTION,
+};

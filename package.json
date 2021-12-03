@@ -1,0 +1,65 @@
+{
+    "name": "4krelax",
+    "description": "4krelax",
+    "dependencies": {
+        "@lightningjs/sdk": "4.3.0",
+        "axios": "^0.21.1",
+        "cross-env": "^7.0.3",
+        "crypto-js": "^4.0.0",
+        "debounce": "^1.2.0",
+        "dotenv": "^8.2.0",
+        "es6-proxy-polyfill": "^2.1.0",
+        "js-cookie": "^2.2.1",
+        "js-sha1": "^0.6.0",
+        "lightning-ui-components": "git+https://github.com/rdkcentral/Lightning-UI-Components.git#1.0.0",
+        "lodash": "^4.17.21",
+        "memoize-one": "^5.2.1",
+        "tslib": "^2.3.1"
+    },
+    "lint-staged": {
+        "*.ts": [
+            "eslint --fix",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run prettify && npm run lint"
+        }
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.13.0",
+        "@babel/core": "^7.13.8",
+        "@lightningjs/cli": "2.4.0",
+        "@types/crypto-js": "^4.0.1",
+        "@types/debounce": "^1.2.0",
+        "@types/lodash.debounce": "^4.0.6",
+        "@typescript-eslint/eslint-plugin": "^4.14.2",
+        "@typescript-eslint/parser": "^4.14.2",
+        "babel-eslint": "^10.0.3",
+        "babel-minify": "^0.5.1",
+        "eslint": "^6.6.0",
+        "eslint-config-prettier": "^6.7.0",
+        "eslint-plugin-prettier": "^3.1.1",
+        "gulp": "4.0.2",
+        "gulp-inject-string": "1.1.2",
+        "gulp-replace": "1.0.0",
+        "husky": "^3.1.0",
+        "lint-staged": "^9.4.3",
+        "prettier": "^1.19.1",
+        "typescript": "^4.1.4",
+        "xml2json": "^0.12.0"
+    },
+    "scripts": {
+        "start": "lng dev",
+        "build": "tsc -noEmit && lng build",
+        "dist": "gulp deleteDistFolder && tsc -noEmit && cross-env LNG_BUILD_MINIFY=true lng dist --es5 && cross-env ES=es5 gulp build && npm run babelES5",
+        "tizen-dev": "gulp tizen && NODE_ENV=development node platform_configs/configureXml.js",
+        "babelES5": "./node_modules/.bin/babel dist/es5/static/js/appBundle.es5.js dist/es5/static/js/lightning.es5.js -d dist/es5/static/js",
+        "serve": "serve dist/es5 -l 8080",
+        "check": "tsc -noEmit",
+        "lint": "eslint . --ext .ts",
+        "prettify": "prettier --config .prettierrc \"src/**/*.ts\" --write",
+        "fix-lint": "eslint . --fix"
+    }
+}

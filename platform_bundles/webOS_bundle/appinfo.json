@@ -1,0 +1,14 @@
+{
+    "id": "com.RttTest.tv",
+    "version": "1.0.0",
+    "disableBackHistoryAPI": true,
+    "vendor": "RttTest",
+    "type": "web",
+    "main": "index.html",
+    "title": "RttTest",
+    "icon": "",
+    "largeIcon": "",
+    "bgColor": "#C6002B",
+    "iconColor": "#C6002B",
+    "splashBackground": ""
+}

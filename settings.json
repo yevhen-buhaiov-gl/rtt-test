@@ -1,0 +1,22 @@
+{
+    "appSettings": {
+        "stage": {
+            "clearColor": "0x00ffffff",
+            "useImageWorker": true,
+            "defaultFontFace": "Regular"
+        },
+        "debug": false
+    },
+    "platformSettings": {
+        "router": {
+            "gcOnUnload": true,
+            "lazyCreate": true,
+            "backtrack": true
+        },
+        "inspector": false,
+        "path": "./static",
+        "log": false,
+        "showVersion": false,
+        "esEnv": "es5"
+    }
+}

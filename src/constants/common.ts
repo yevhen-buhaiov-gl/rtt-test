@@ -1,3 +1,7 @@
+enum CARD_ROW_TYPE {
+    LABELED = 'LABELED',
+}
+
 enum NAVIGATION_DIRECTION {
     UP = 'UP',
     DOWN = 'DOWN',
@@ -16,6 +20,7 @@ enum CAROUSEL_TYPE {
 
 
 export {
+    CARD_ROW_TYPE,
     CARD_TYPE,
     CAROUSEL_TYPE,
     NAVIGATION_DIRECTION,
